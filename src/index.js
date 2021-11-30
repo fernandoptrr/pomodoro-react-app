@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+// Import CSS file
 import "./index.css";
+import "./App.css";
+import "./style.css";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import SettingsContextProvider from "./context/SettingsContext";
+
 
 ReactDOM.render(
   <SettingsContextProvider>

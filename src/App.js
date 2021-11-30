@@ -31,11 +31,13 @@ function App() {
         <div className="weather">
           {weather.main && <Weather weather={weather} />}
         </div>
-        <h1>Pomodoro</h1>
+        <div className="container-flex">
+          <h1>Pomodoro</h1>
         <small>Be productive the right way.</small>
         {pomodoro !== 0 ? (
           <>
-            <ul className="labels">
+            <div className="container-flex-row">
+              {/* <ul className="labels"> */}
               <li>
                 <Button
                   title="Work"
@@ -63,8 +65,9 @@ function App() {
                   _callback={() => setCurrentTimer("long")}
                 />
               </li>
-            </ul>
-            <Button title="Settings" _callback={SettingsBtn} />
+            {/* </ul> */}
+            </div>
+           
             <div className="timer-container">
               <div className="time-wrapper">
                 <CountdownAnimation
@@ -87,11 +90,13 @@ function App() {
                 activeClass={startAnimate ? "active" : undefined}
                 _callback={pauseTimer}
               />
+               <Button title="Settings" _callback={SettingsBtn} />
             </div>
           </>
         ) : (
           <SetPomodoro />
         )}
+        </div>
       </main>
     </div>
   );
