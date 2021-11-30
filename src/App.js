@@ -26,7 +26,21 @@ function App() {
   }, [executing, startAnimate]);
 
   return (
-    <div className="app">
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? weather.weather[0].main === "Thunderstorm" ||
+            weather.weather[0].main === "Rain" ||
+            weather.weather[0].main === "Drizzle"
+            ? "app rain"
+            : weather.weather[0].main === "Snow"
+            ? "app snow"
+            : weather.weather[0].main === "Clouds"
+            ? "app cloud"
+            : "app"
+          : "app"
+      }
+    >
       <main>
         <div className="weather">
           {weather.main && <Weather weather={weather} />}

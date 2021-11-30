@@ -1,13 +1,77 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.app {
+  background-image: url("./assets/clear2.png");
+  background-size: cover;
+  background-position: bottom;
+  transform: 0.5s ease-out;
+}
+
+.app.rain {
+  background-image: url("./assets/rainy.png");
+}
+
+.app.snow {
+  background-image: url("./assets/snow.png");
+}
+
+.app.cloud {
+  background-image: url("./assets/cloudy.jpg");
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.2)
+  );
+  padding: 25px;
+}
+
+.weather {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  color: #fff;
+  font-weight: 600;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.location-box .location {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  max-width: 15ch;
+  text-align: end;
+}
+
+.weather-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.weather-box .temp {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.weather-box .condition {
+  margin-right: 10px;
 }
