@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { SettingsContext } from "../context/SettingsContext";
 import Slider from "@mui/material/Slider";
-import Typography from "@mui/material/Typography";
 
 const SetPomodoro = () => {
   const [newTimer, setNewTimer] = useState({
@@ -52,6 +51,7 @@ const SetPomodoro = () => {
             <label>{newTimer.work}</label>
           </div>
           <Slider
+            max={120}
             valueLabelDisplay="auto"
             aria-label="work thumb label"
             defaultValue={20}
@@ -64,6 +64,7 @@ const SetPomodoro = () => {
             <label>{newTimer.short}</label>
           </div>
           <Slider
+            max={15}
             valueLabelDisplay="auto"
             aria-label="short thumb label"
             defaultValue={20}
@@ -76,6 +77,7 @@ const SetPomodoro = () => {
             <label>{newTimer.long}</label>
           </div>
           <Slider
+            max={45}
             valueLabelDisplay="auto"
             aria-label="long thumb label"
             defaultValue={20}
