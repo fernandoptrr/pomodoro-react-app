@@ -1,6 +1,19 @@
 import React, { useContext, useState } from "react";
 import { SettingsContext } from "../context/SettingsContext";
 import Slider from "@mui/material/Slider";
+import { green, purple, orange } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: '#ffab61',
+    },
+  },
+});
 
 const SetPomodoro = () => {
   const [newTimer, setNewTimer] = useState({
@@ -44,6 +57,7 @@ const SetPomodoro = () => {
   };
   return (
     <div className="form-container">
+    <ThemeProvider theme={theme}>
       <form noValidate onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <div className="label-slider">
@@ -58,6 +72,9 @@ const SetPomodoro = () => {
             name="work"
             onChange={handleChange}
             value={newTimer.work}
+            sx={{
+              color: 'secondary.main'
+            }}
           />
           <div className="label-slider">
             <p>Short Duration (min)</p>
@@ -71,6 +88,9 @@ const SetPomodoro = () => {
             name="shortBreak"
             onChange={handleChange}
             value={newTimer.short}
+            sx={{
+              color: 'secondary.main'
+            }}
           />
           <div className="label-slider">
             <p>Long Duration (min)</p>
@@ -84,10 +104,14 @@ const SetPomodoro = () => {
             name="longBreak"
             onChange={handleChange}
             value={newTimer.long}
+            sx={{
+              color: 'secondary.main'
+            }}
           />
           <button type="submit">Set Timer</button>
         </div>
       </form>
+       </ThemeProvider>
     </div>
   );
 };
