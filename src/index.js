@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 
 // Import CSS file
 import "./index.css";
-import "./App.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
