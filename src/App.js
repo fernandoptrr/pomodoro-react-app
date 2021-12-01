@@ -34,7 +34,7 @@ function App() {
       <main>
         <div>{weather.main && <Weather weather={weather} />}</div>
         <div className="pomodoro-container centered">
-          <h1>Pomodoro</h1>
+          <h1>Pomodoro Habits</h1>
           <h2>Change your habits, be productive and focused</h2>
           {pomodoro !== 0 ? <Timer /> : <SetPomodoro />}
         </div>
