@@ -53,12 +53,12 @@ function Timer() {
       <div className="button-flex-container sec">
         <Button
           title="Start"
-          activeClass={!startAnimate ? "active" : undefined}
+          activeClass={startAnimate ? "active" : undefined}
           _callback={startTimer}
         />
         <Button
           title="Pause"
-          activeClass={startAnimate ? "active" : undefined}
+          activeClass={!startAnimate ? "active" : undefined}
           _callback={pauseTimer}
         />
         <Button title="Settings" _callback={SettingsBtn} />
