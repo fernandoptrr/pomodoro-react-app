@@ -42,48 +42,44 @@ function App() {
       }
     >
       <main>
-        <div className="weather">
-          {weather.main && <Weather weather={weather} />}
-        </div>
-        <div className="container-flex">
+        <div>{weather.main && <Weather weather={weather} />}</div>
+        <div className="pomodoro-container centered">
           <h1>Pomodoro</h1>
-        <small>Be productive the right way.</small>
-        {pomodoro !== 0 ? (
-          <>
-            <div className="container-flex-row">
-              {/* <ul className="labels"> */}
-              <li>
-                <Button
-                  title="Work"
-                  activeClass={
-                    executing.active === "work" ? "active-label" : undefined
-                  }
-                  _callback={() => setCurrentTimer("work")}
-                />
-              </li>
-              <li>
-                <Button
-                  title="Short Break"
-                  activeClass={
-                    executing.active === "short" ? "active-label" : undefined
-                  }
-                  _callback={() => setCurrentTimer("short")}
-                />
-              </li>
-              <li>
-                <Button
-                  title="Long Break"
-                  activeClass={
-                    executing.active === "long" ? "active-label" : undefined
-                  }
-                  _callback={() => setCurrentTimer("long")}
-                />
-              </li>
-            {/* </ul> */}
-            </div>
-           
-            <div className="timer-container">
-              <div className="time-wrapper">
+          <h2>Change your habits, be productive and focused</h2>
+          {pomodoro !== 0 ? (
+            <>
+              <div className="button-flex-container">
+                <li>
+                  <Button
+                    title="Focus"
+                    activeClass={
+                      executing.active === "work" ? "active" : undefined
+                    }
+                    _callback={() => setCurrentTimer("work")}
+                  />
+                </li>
+                <li>
+                  <Button
+                    title="Short Break"
+                    activeClass={
+                      executing.active === "short" ? "active" : undefined
+                    }
+                    _callback={() => setCurrentTimer("short")}
+                  />
+                </li>
+                <li>
+                  <Button
+                    title="Long Break"
+                    activeClass={
+                      executing.active === "long" ? "active" : undefined
+                    }
+                    _callback={() => setCurrentTimer("long")}
+                  />
+                </li>
+              </div>
+
+              {/* <div className="timer-container"> */}
+              <div className="timer-container">
                 <CountdownAnimation
                   key={pomodoro}
                   timer={pomodoro}
@@ -92,24 +88,24 @@ function App() {
                   {children}
                 </CountdownAnimation>
               </div>
-            </div>
-            <div className="button-wrapper">
-              <Button
-                title="Start"
-                activeClass={!startAnimate ? "active" : undefined}
-                _callback={startTimer}
-              />
-              <Button
-                title="Pause"
-                activeClass={startAnimate ? "active" : undefined}
-                _callback={pauseTimer}
-              />
-               <Button title="Settings" _callback={SettingsBtn} />
-            </div>
-          </>
-        ) : (
-          <SetPomodoro />
-        )}
+              {/* </div> */}
+              <div className="button-flex-container sec">
+                <Button
+                  title="Start"
+                  activeClass={!startAnimate ? "active" : undefined}
+                  _callback={startTimer}
+                />
+                <Button
+                  title="Pause"
+                  activeClass={startAnimate ? "active" : undefined}
+                  _callback={pauseTimer}
+                />
+                <Button title="Settings" _callback={SettingsBtn} />
+              </div>
+            </>
+          ) : (
+            <SetPomodoro />
+          )}
         </div>
       </main>
     </div>

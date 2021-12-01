@@ -45,7 +45,7 @@ const SetPomodoro = () => {
   return (
     <div className="form-container">
       <form noValidate onSubmit={handleSubmit}>
-        <div className="input-wrapper">
+        <div className="setting-container">
           <div className="label-slider">
             <p>Work Duration (min)</p>
             <label>{newTimer.work}</label>
