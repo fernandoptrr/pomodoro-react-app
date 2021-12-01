@@ -20,7 +20,7 @@ function Timer() {
       <div className="button-flex-container">
         <li>
           <Button
-            title="Work"
+            title="Focus"
             activeClass={executing.active === "work" ? "active" : undefined}
             _callback={() => setCurrentTimer("work")}
           />
