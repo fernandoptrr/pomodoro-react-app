@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import { SettingsContext } from "../context/SettingsContext";
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import CountdownAnimation from "../components/CountdownAnimation";
 
 function Timer() {
@@ -17,48 +17,40 @@ function Timer() {
 
   return (
     <>
-      <div className="container-flex-row">
+      <div className="button-flex-container">
         <li>
           <Button
             title="Work"
-            activeClass={
-              executing.active === "work" ? "active-label" : undefined
-            }
+            activeClass={executing.active === "work" ? "active" : undefined}
             _callback={() => setCurrentTimer("work")}
           />
         </li>
         <li>
           <Button
             title="Short Break"
-            activeClass={
-              executing.active === "short" ? "active-label" : undefined
-            }
+            activeClass={executing.active === "short" ? "active" : undefined}
             _callback={() => setCurrentTimer("short")}
           />
         </li>
         <li>
           <Button
             title="Long Break"
-            activeClass={
-              executing.active === "long" ? "active-label" : undefined
-            }
+            activeClass={executing.active === "long" ? "active" : undefined}
             _callback={() => setCurrentTimer("long")}
           />
         </li>
       </div>
 
       <div className="timer-container">
-        <div className="time-wrapper">
-          <CountdownAnimation
-            key={pomodoro}
-            timer={pomodoro}
-            animate={startAnimate}
-          >
-            {children}
-          </CountdownAnimation>
-        </div>
+        <CountdownAnimation
+          key={pomodoro}
+          timer={pomodoro}
+          animate={startAnimate}
+        >
+          {children}
+        </CountdownAnimation>
       </div>
-      <div className="button-wrapper">
+      <div className="button-flex-container sec">
         <Button
           title="Start"
           activeClass={!startAnimate ? "active" : undefined}

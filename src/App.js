@@ -8,12 +8,8 @@ import Timer from "./components/timer";
 function App() {
   const { weather } = FetchApi();
 
-  const {
-    pomodoro,
-    executing,
-    startAnimate,
-    updateExecute,
-  } = useContext(SettingsContext);
+  const { pomodoro, executing, startAnimate, updateExecute } =
+    useContext(SettingsContext);
 
   useEffect(() => {
     updateExecute(executing);
@@ -36,17 +32,11 @@ function App() {
       }
     >
       <main>
-        <div className="weather">
-          {weather.main && <Weather weather={weather} />}
-        </div>
-        <div className="container-flex">
+        <div>{weather.main && <Weather weather={weather} />}</div>
+        <div className="pomodoro-container centered">
           <h1>Pomodoro</h1>
-        <small>Be productive the right way.</small>
-        {pomodoro !== 0 ? (
-          <Timer/>
-        ) : (
-          <SetPomodoro />
-        )}
+          <h2>Change your habits, be productive and focused</h2>
+          {pomodoro !== 0 ? <Timer /> : <SetPomodoro />}
         </div>
       </main>
     </div>

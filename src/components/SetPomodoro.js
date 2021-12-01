@@ -59,7 +59,7 @@ const SetPomodoro = () => {
     <div className="form-container">
     <ThemeProvider theme={theme}>
       <form noValidate onSubmit={handleSubmit}>
-        <div className="input-wrapper">
+        <div className="setting-container">
           <div className="label-slider">
             <p>Work Duration (min)</p>
             <label>{newTimer.work}</label>
