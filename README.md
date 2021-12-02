@@ -1,6 +1,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![](pomodoro-gif.gif)
+![](pomodoro.gif)
 
 A simple pomodoro timer react app with dynamic background based on current weather conditions. We use the Open Weather Map API to make calls to a restful api to return the current weather data. For the pomodoro timer, we use the [React Countdown Circle Timer](https://github.com/vydimitrov/react-countdown-circle-timer) for smooth animation and displaying the timer. In making this app, we implemented all the basics in React.js such as Hooks, States, Props, Components, effects, API Call, Dynamic data display, Dynamic fetch data, etc.
 
